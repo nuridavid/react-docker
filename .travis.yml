@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -it nuridavid/react-docker -f Dockerfile.dev .
+  - docker build -t nuridavid/react-docker -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true nuridavid/react-docker npm run test -- --coverage
